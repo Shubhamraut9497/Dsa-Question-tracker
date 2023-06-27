@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, Router, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Status from "./Status";
 function Navbar({ mode, setmode }) {
   const [hidden1, sethidden1] = useState("hidden");
   const handleClick = () => {
-    mode == "light" ? setmode("dark") : setmode("light");
+    mode === "light" ? setmode("dark") : setmode("light");
   };
 
   return (
@@ -23,10 +23,10 @@ function Navbar({ mode, setmode }) {
           className="flex align-bottom text-base pr-3 "
           onClick={() => {
             console.log(hidden1);
-            hidden1 == "hidden" ? sethidden1("visible") : sethidden1("hidden");
+            hidden1 === "hidden" ? sethidden1("visible") : sethidden1("hidden");
           }}
         >
-          <img className="w-8 h-9" src="bulb.png "></img>
+          <img className="w-8 h-9" src="bulb.png " alt="is"></img>
           <div className="text-gray-200  text-right  m-2 h-8 ">Hot Tip</div>
         </div>
       </div>

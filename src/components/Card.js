@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 
@@ -11,15 +11,15 @@ export default function Card({ name, no, qno }) {
 
     for (let i = 0; i < op.length; i++) {
       if (
-        (op[i] != "," &&
-          op[i] != "/" &&
-          op[i] != '"' &&
-          op[i] != "[" &&
-          op[i] != "]" &&
+        (op[i] !== "," &&
+          op[i] !== "/" &&
+          op[i] !== '"' &&
+          op[i] !== "[" &&
+          op[i] !== "]" &&
           (op[i] < "a" || op[i] > "z") &&
-          op[i] != "\\" &&
-          op[i] != "+") ||
-        op.length == 3
+          op[i] !== "\\" &&
+          op[i] !== "+") ||
+        op.length === 3
       ) {
         kk++;
       }
@@ -34,7 +34,7 @@ export default function Card({ name, no, qno }) {
       {
         <div
           className={
-            Math.round((ans * 100) / qno) != 100
+            Math.round((ans * 100) / qno) !== 100
               ? " flex items-center m-2 justify-between border-purple-300 shadow-lg  font-open-sans border-spacing-1.5  border-2 w-auto rounded-lg box-border p-8"
               : " flex items-center m-2 justify-between border-purple-300 shadow-lg  font-open-sans border-spacing-1.5  border-2 w-auto rounded-lg box-border p-8  bg-green-100  "
           }
@@ -42,6 +42,7 @@ export default function Card({ name, no, qno }) {
           <img
             className="w-6 h-6  mr-3 mt-0 align-top"
             src="https://pluspng.com/img-png/react-logo-png-js-logo-react-react-js-icon-512x512.png"
+            alt="js"
           ></img>
           <div className=" ">
             <h2 className="text-xl text-slate-600 font-bold  mt-2">{name}</h2>
@@ -66,6 +67,7 @@ export default function Card({ name, no, qno }) {
                     <img
                       src="https://th.bing.com/th/id/R.15e3df2a05ac767df4359bf37707b781?rik=YoELJf68lvMxWQ&riu=http%3a%2f%2fs3.amazonaws.com%2fpix.iemoji.com%2fimages%2femoji%2fapple%2fios-11%2f256%2fman-technologist-light-skin-tone.png&ehk=uinI8ak5dKPQXLDnNbEcTr%2bSuymPLXBS%2bBPUBpPLgcI%3d&risl=&pid=ImgRaw&r=0"
                       className="w-5 h-5"
+                      alt="sin"
                     ></img>
                     <h6 className="  text-green-700    ">
                       {Math.round((ans * 100) / qno)} %
@@ -85,6 +87,7 @@ export default function Card({ name, no, qno }) {
                     <img
                       src="https://cdn.shopify.com/s/files/1/1061/1924/products/Clapping_Hands_Emoji_ios10_d7ab242e-7230-47bf-b1e2-d46a4bc51b5b_grande.png?v=1571606090"
                       className="w-5 h-5"
+                      alt="id"
                     ></img>
                     <h6 className="  text-green-700    ">100%</h6>
                   </div>
