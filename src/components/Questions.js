@@ -95,13 +95,10 @@ export default function Questions({
 
     return ans;
   };
-  // let classNamer ;
-  // mode=="dark" ? classNamer = "bg-blue-100"  : classNamer = "mb-10";
+
 
   return (
     <div className={"mb-20"}>
-      {/* {console.log ( mode == "dark" ? " bg-cyan-500 " : null )} */}
-
       <div className="flex justify-center mt-24 ">
         <img className="w-10 h-10" src="Sparkle.png"></img>
         <h1 className="text-4xl mb-3">{name} Problems</h1>
@@ -127,50 +124,50 @@ export default function Questions({
             <th className="border-1 font-normal text-center p-3 w-20">Done</th>
           </tr>
           {qq.map((ele) => {
-            {
-              return (
-                <tr
-                  className={
-                    checkID(ele.ID) == true
-                      ? "bg-green-400"
-                      : ele.ID % 2 === 0
-                      ? "bg-fuchsia-100"
-                      : "none"
-                  }
-                >
-                  <td className=" text-md  text-sky-700 font-medium   border-2 p-3 w-10">
-                    {ele.ID[0] == "+" ? handleID(ele.ID) : ele.ID}
-                  </td>
-                  <td className="text-md text-left text-sky-700 font-medium   border-2 p-3">
-                    <Link target="_blank" to={ele.link}>
-                      {ele.Q}
-                    </Link>
-                  </td>
-                  <td className="text-md  text-sky-700 font-medium text-center  border-2 w-36">
-                    {checkID(ele.ID) === false ? (
-                      <img
-                        className="w-5 h-5"
-                        src="https://th.bing.com/th/id/OIP.2Ef1V0Yr3Lv_CZLcXBBt3gHaHa?pid=ImgDet&rs=1"
-                      ></img>
-                    ) : (
+            return (
+              <tr
+                className={
+                  checkID(ele.ID) == true
+                    ? "bg-green-400"
+                    : ele.ID % 2 === 0
+                    ? "bg-fuchsia-100"
+                    : "none"
+                }
+              >
+                <td className=" text-md  text-sky-700 font-medium   border-2 p-3 w-10">
+                  {ele.ID[0] == "+" ? handleID(ele.ID) : ele.ID}
+                </td>
+                <td className="text-md text-left text-sky-700 font-medium   border-2 p-3">
+                  <Link target="_blank" to={ele.link}>
+                    {ele.Q}
+                  </Link>
+                </td>
+                <td className="text-md  text-sky-700 font-medium text-center  border-2 w-36">
+                  {checkID(ele.ID) === false ? (
+                    <img
+                      className="w-5 h-5"
+                      src="https://th.bing.com/th/id/OIP.2Ef1V0Yr3Lv_CZLcXBBt3gHaHa?pid=ImgDet&rs=1"
+                    ></img>
+                  ) : (
+                    <>
                       <img
                         className="w-5 h-5"
                         src="https://cdn.pixabay.com/photo/2012/04/24/16/22/check-40319_960_720.png"
                       ></img>
-                    )}
-                  </td>
-                  <td className="text-md  text-sky-700 font-medium   border-2 p-3 w-20">
-                    <input
-                      type="checkbox"
-                      onChange={() => {
-                        handlechange(ele.ID);
-                      }}
-                      checked={checkID(ele.ID)}
-                    />
-                  </td>
-                </tr>
-              );
-            }
+                    </>
+                  )}
+                </td>
+                <td className="text-md  text-sky-700 font-medium   border-2 p-3 w-20">
+                  <input
+                    type="checkbox"
+                    onChange={() => {
+                      handlechange(ele.ID);
+                    }}
+                    checked={checkID(ele.ID)}
+                  />
+                </td>
+              </tr>
+            );
           })}
         </table>
       </div>
